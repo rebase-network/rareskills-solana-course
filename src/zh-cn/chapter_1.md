@@ -170,8 +170,8 @@ Solana 是一个快速发展的软件，你可能会遇到安装问题。我们�
 
 我们的教程系列是使用以下版本编写的：
 
-- Anchor = 版本 0.29.0
-- Solana = 版本 1.16.25
+- Anchor = 版本 0.29.0（译者注：请务必使用 0.29）
+- Solana = 版本 1.16.25（译者注：1.16 版本有点老旧，建议使用 1.18 版本）
 - Rustc = 1.77.0-nightly
 
 你可以通过运行以下命令更改 Anchor 版本
@@ -183,9 +183,12 @@ avm use 0.29.0
 
 你可以通过在 curl 命令中指定版本来更改 Solana 版本：
 
-```
+```shell
 # 安装 solana
 sh -c "$(curl -sSfL https://release.solana.com/1.16.25/install)"
+
+# 当前最新版，推荐安装 0.18 版本
+sh -c "$(curl -sSfL https://release.solana.com/v1.18.12/install)"
 ```
 
 ### error: package \`solana-program v1.18.0\` cannot be built
@@ -217,7 +220,9 @@ error[E0658]: use of unstable library feature 'build_hasher_simple_hash_one'
 = help: add #![feature(build_hasher_simple_hash_one)] to the crate attributes to enable
 ```
 
-运行以下命令：`cargo update -p ahash@0.8.7 --precise 0.8.6` 资料来源：https://solana.stackexchange.com/questions/8800/cant-build-hello-world
+运行以下命令：`cargo update -p ahash@0.8.7 --precise 0.8.6`
+
+资料来源：https://solana.stackexchange.com/questions/8800/cant-build-hello-world
 
 ### Error: Deploying program failed: Error processing Instruction 1: custom program error: 0x1
 
